@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urban Farming Crop Selector</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-image: url('{{ url_for('static', filename='images/background.jpg') }}');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Urban Farming Crop Selector</h1>
+        <label for="crop-select">Choose a crop:</label>
+        <select id="crop-select">
+            <option value="">Select a crop</option>
+            <option value="rice">Rice</option>
+            <option value="tomato">Tomato</option>
+            <option value="lettuce">Lettuce</option>
+        </select>
+        <button onclick="runCropSpecificCode()">Run</button>
+        <div id="output" class="hidden"></div>
+        <button onclick="getSimulatedData()">Get Simulated Data</button>
+        <div id="simulated-data"></div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
